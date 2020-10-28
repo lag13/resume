@@ -1,0 +1,81 @@
+* Lucas Groenendaal
+- groenendaal92@gmail.com
+- 914-588-8612
+- https://github.com/lag13
+
+** Objective
+Help people, learn new things, and enjoy my time doing it.
+
+** Skills
+- Languages: Golang, Clojure, PHP
+- Tools/Infrastructure/Software: Docker, Terraform, Ansible, Jenkins,
+  Kubernetes, Prometheus, Vault, Elasticsearch, MySQL, Redis, Grafana,
+  and AWS
+
+** Work Experience
+*** Site Reliability Engineering Manager October 2020 - Present
+Continued my previous tasks from when I was on the DevOps team plus
+mentored a developer, who was fresh out of college, to the point where
+they became an actively contributing member of the DevOps team.
+
+*** DevOps Engineer at Guaranteed Rate: February 2019 - October 2020
+Maintained, upgraded, and standardized infrastructure used by the
+development organization while fielding support requests from our
+developers.
+- Deployed an upgraded version of Elasticsearch (v5 -> v7). Benefits
+  of this (besides being on the latest version): improved stability,
+  multi-tenant solution, added alerting, wrote documentation on how to
+  upgrade (which a teammate successfully followed!)
+- Fixed an intermittent DNS issue on our old k8s clusters.
+- Improved stability of influxdb by deleting old data and adding a
+  retention policy.
+- Wrote terraform to spin up infrastructure for our jira instances.
+- Many many miscellaneous issues that would make their way to our
+  team:
+  - Developer didn't understand why their lambda was failing to talk
+    to the outside world. Problem was they picked an AWS security
+    group with no egress rules.
+  - Helped developers refine AWS IAM permissions or fix them when they
+    weren't working.
+  - Added integrations to Jenkins (like slack)
+  - Analyzed network flow logs for EC2 instances to see if they could
+    be retired.
+
+*** Software Engineer II at CareerBuilder: January 2017 - February 2019
+Continued developing new features and maintaining the infrastructure
+around our applicant tracking system (ATS).
+- Traveled to India to train the new development team so they could
+  work on our ATS.
+- Created microservices to expand the ability of the ATS (Cangrade
+  assessments, applications from Indeed)
+- Cleaned up technical debt (upgraded golang versions for our APIs,
+  upgraded our software to use CircleCI 2.0, refactored older projects
+  to match the structure of newer ones, etc...)
+
+*** Software Engineer I at CareerBuilder: October 2015 - January 2017
+- Developed software which managed our applicant tracking system's
+  (ATS) life cycle (creation, deployment, upgrades, deletions)
+- Created a feature flag API, which was consumed by the ATS, to enable
+  quick rollbacks in case a bug was accidentally introduced.
+
+*** Integration Software Developer at CareerBuilder: July 2014 - October 2015
+- Edited XML files to configure certain behaviors of our applicant
+  tracking system (ATS). Ended up learning and writing vimscript
+  (thanks https://learnvimscriptthehardway.stevelosh.com/!!) to
+  automate some of the more repetitive configurations.
+- Wrote a PHP script to pull data from each customer's ATS to help the
+  business make more informed decisions.
+
+** Education: 2010 - 2014
+B.A. in Mathematics and Computer Science at State University of New
+York College at Geneseo
+
+** About me
+I enjoy doing most things as long as I have good people to do them
+with. Some random fun things I've done:
+- Ran the 2019 Chicago marathon
+- Jumped out of a perfectly good airplane (i.e. skydived)
+- Raced on a sailboat during the summer of 2020
+
+On weekends you might find me cooking while listening to movie
+soundtracks or playing guitar.
