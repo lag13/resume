@@ -1,0 +1,169 @@
+%!TEX TS-program = xelatex
+
+% Copied from my friend Sheng's repository here:
+% https://github.com/sheng0501/CV. It looks like he downloaded this
+% latex template from
+% https://www.latextemplates.com/template/plasmati-graduate-cv
+
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\usepackage{fontspec} 					%for loading fonts
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+%% \usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{fullpage}
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\usepackage{tikz}
+
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{1pt}{1pt}
+%Tweak a bit the top margin
+% \addtolength{\voffset}{-2.0cm}
+\addtolength{\oddsidemargin}{-.5in}
+\addtolength{\evensidemargin}{-.5in}
+\addtolength{\textwidth}{1.0in}
+
+\addtolength{\topmargin}{-.575in}
+\addtolength{\textheight}{1.75in}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Lucas \textsc{Groenendaal}
+  }\par}
+
+\par{\centering
+  {\normalsize
+  914-588-8612 | groenendaal92@gmail.com | https://github.com/lag13
+}\par}
+\bigskip
+
+%--------------------SECTIONS-----------------------------------
+\section{Objective}
+Help people, learn new things, and enjoy my time doing it.
+
+\section{Skills}
+\begin{itemize}
+  % \small
+  \item Languages: Golang, Clojure, PHP
+  \item Tools/Infrastructure/Software: Docker, Terraform, Ansible, Jenkins, Kubernetes, Prometheus, Vault, Elasticsearch, MySQL, Redis, Grafana, and AWS
+\end{itemize}
+
+\section{Work Experience}
+\begin{tabular}{r|p{13cm}}
+ \emph{Current} & Site Reliability Engineering Manager at \textsc{Guaranteed Rate} \\
+ \textsc{Oct 2020} &
+ \footnotesize{Continued my previous tasks from when I was on the DevOps team plus mentored a developer, who was fresh out of college, to the point where they became an actively contributing member of the DevOps team.} 
+ \\
+ \multicolumn{2}{c}{} \\ 
+ \textsc{Oct 2020} & DevOps Engineer at \textsc{Guaranteed Rate} \\
+ \textsc{Feb 2019} &
+ \footnotesize{Maintained, upgraded, and standardized infrastructure used by the development organization while fielding support requests from our developers.} 
+ \begin{itemize}
+ \item \footnotesize{Deployed an upgraded version of Elasticsearch (v5 -> v7). Benefits (besides being on the latest version): improved stability, multi-tenant solution, added alerting, wrote documentation on how to upgrade (which a teammate successfully followed!)}
+ \item \footnotesize{Fixed an intermittent DNS issue on our old 1.8 k8s clusters which was causing timeouts}
+ \item \footnotesize{Conducted technical and behavioral interviews for potential candidates}
+ \item \footnotesize{Sampling of miscellaneous requests from the IT organization:}
+   \begin{itemize}
+   \item \footnotesize{Developer asked why their lambda was failing to talk to the outside world. Turns out they had selected an AWS security group with no egress rules}
+   \item \footnotesize{Developer requests to pair when working with technology they are not familiar with but we are like terraform or Jenkins}
+   \item \footnotesize{Developer asks why DNS is not resolving and it turns out they are CNAME'ing to an IP address}
+   \item \footnotesize{Developer needs help refining AWS IAM permissions}
+   \item \footnotesize{Security asking if an EC2 instance can be terminated. Looked at VPC flow logs to make this determination}
+   \end{itemize}
+ \end{itemize}
+ \\
+ \multicolumn{2}{c}{} \\
+ \textsc{Feb 2019} & Software Engineer II at \textsc{CareerBuilder} \\
+ \textsc{Jan 2017} &
+ \footnotesize{Continued developing new features and maintaining the infrastructure around our applicant tracking system (ATS)}
+ \begin{itemize}
+   \item \footnotesize{Traveled to India to train the new development team so they could work on our ATS.}
+   \item \footnotesize{Created microservices to expand the ability of the ATS (Cangrade assessments)}
+   \item \footnotesize{Cleaned up technical debt (upgraded golang versions for our APIs, upgraded our software to use CircleCI 2.0, refactored older projects to match the structure of newer ones, etc...)}
+ \end{itemize}
+ \\
+ \multicolumn{2}{c}{} \\
+ \textsc{Jan 2017} & Software Engineer I at \textsc{CareerBuilder} \\
+ \textsc{Oct 2015} &
+ \begin{itemize}
+   \item \footnotesize{Developed software which managed our applicant tracking system's (ATS) life cycle (creation, deployment, upgrades, deletions)}
+   \item \footnotesize{Created a feature flag API, which was consumed by the ATS, to enable quick rollbacks in case a bug was accidentally introduced.}
+ \end{itemize}
+ \\
+ \multicolumn{2}{c}{} \\
+ \textsc{Jan 2017} & Integration Software Developer at \textsc{CareerBuilder} \\
+ \textsc{Oct 2015} &
+ \footnotesize{Edited XML files to configure certain behaviors of our applicant tracking system (ATS). Ended up learning and writing vimscript (thanks https://learnvimscriptthehardway.stevelosh.com/!!) to automate some of the more repetitive configurations.}
+ \\
+ \multicolumn{2}{c}{} \\
+\end{tabular}
+
+\section{Education}
+\begin{tabular}{rl}	
+  \textsc{2014} & B.A. in Mathematics and Computer Science at State University of New York College at Geneseo \\
+\end{tabular}
+
+\section{About me}
+I enjoy doing most things as long as I have good people to do them with. Some random fun things I've done:
+\begin{tabular}{rl}	
+  \textsc{2014} & B.A. in Mathematics and Computer Science at State University of New York College at Geneseo \\
+\end{tabular}
+
+
+\end{document}
